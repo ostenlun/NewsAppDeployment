@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: NewsApp
+  labels:
+    app: newsapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: newsapp
+  template:
+    metadata:
+      labels:
+        app: newsapp
+    spec:
+      containers:
+      - name: newsapp-container
+        image: newsapp:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1"  
+
+  

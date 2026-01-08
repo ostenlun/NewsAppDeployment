@@ -2,7 +2,7 @@ CREATE DATABASE article_database;
 \c article_database;
 
 CREATE TABLE articles (
-    article_id INT PRIMARY KEY,
+    article_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
     title TEXT,
     language TEXT,
